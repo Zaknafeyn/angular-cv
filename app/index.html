@@ -2,42 +2,561 @@
 <!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/normalize.css">
-  <link rel="stylesheet" href="bower_components/html5-boilerplate/css/main.css">
-  <link rel="stylesheet" href="app.css">
-  <script src="bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
-</head>
-<body>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
+<!--[if gt IE 8]><!--> 
+<html html lang="en" ng-app="myApp" class="no-js">
+<!--<![endif]-->
+	<head>
+		
+		
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+		<meta name="keyword" content="Valentine Radchuk, personal CV, personal page, experience, skils, education, hobbies, contact information."/>
+		<meta name="description" content="Valentyn Radchuk's personal CV">
+		<meta name="author" content="Valentyn Radchuk">
 
-  <div ng-view></div>
+		<!-- Social networks metatags LinkedIn, FB -->
+		<meta property="og:image" content="http://zaknafeyn.github.io/cv/img/ProfilePhoto.jpg"/>
+		<meta property="og:image:type" content="image/jpeg" />
+		<meta property="og:image:width" content="180" />
+		<meta property="og:image:height" content="180" />
+		<meta property="og:locale" content="en_EN"/>
+		<meta property="og:type" content="website"/>
+		<meta property="og:title" content="Valentine Radchuk | Software developer | zaknafeyn@gmail.com"/>
+		<meta property="og:description" content="Valentyn Radchuk's personal CV"/>
+		<meta property="og:url" content="cv.vradchuk.info"/>
+		<meta property="og:site_name" content="Valentine Radchuk's CV"/>
+		
+		<!-- / End semantic -->
 
-  <div>Angular seed app: v<span app-version></span></div>
+		<link rel="icon" href="./img/ProfilePhoto.jpg">
 
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="app.js"></script>
-  <script src="view1/view1.js"></script>
-  <script src="view2/view2.js"></script>
-  <script src="components/version/version.js"></script>
-  <script src="components/version/version-directive.js"></script>
-  <script src="components/version/interpolate-filter.js"></script>
-</body>
+		<link href='http://fonts.googleapis.com/css?family=Exo+2:400,600' rel='stylesheet' type='text/css'>
+		<!-- Include font awesome -->
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<!-- Include font mfizz -->
+		<!-- <link rel="stylesheet" href="path/to/bootstrap/css/bootstrap.min.css"> -->
+		<!-- <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css"> -->
+		<link rel="stylesheet" href="3rdParty/font-mfizz-1.2/font-mfizz.css">
+		
+		<!-- add slick carousel -->
+		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.3.15/slick.css"/>
+
+		<!-- add own styles -->
+		<link rel="stylesheet" type="text/css" href="./css/styles.css" media="only screen" />
+
+		<script src="./bower_components/html5-boilerplate/js/vendor/modernizr-2.6.2.min.js"></script>
+
+		<title>Valentine Radchuk | Software developer</title>
+		
+		<script>
+						(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+								(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+								m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+						})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		
+						ga('create', 'UA-55064367-1', 'auto');
+						ga('require', 'displayfeatures');
+						ga('send', 'pageview');
+				
+				</script>
+	</head>
+
+	<body ng-app>
+		<div class="palette">
+			<section class="content">
+				<header ng-controller="HeaderContent">
+					<div class="row">
+						<div class="span-3">
+							<img class="profilePhoto" src="./img/ProfilePhoto.jpg" />
+						</div>
+						<div class="span-4" >
+							<div class="title-name">
+								<div>
+									<span class="name">{{titleName}}</span>
+								</div>
+								<div class="title-wrapper" ng-repeat="titleItem in titleItems">
+									<span class="title">{{titleItem.name}}</span>
+								</div>
+							</div>
+						</div>
+						<div class="span-5">
+							<div>
+								<div class="span-2">
+									<div class="contacts-points">
+										<div class="contact-item" ng-repeat="loc in locations">
+											<span class="contacts-points">{{loc.name}}</span>
+										</div>
+									</div>
+								</div>
+								<div class="span-3">
+									<div class="contacts">
+
+										<!-- <div class="contact-item" ng-repeat="cnt in contactsList">
+
+											<span class="contacts-address-name">
+											<i class="fa fa-lg {{cnt.fa-glyph}}"></i>&nbsp;
+
+													<a href="{{cnt.link-value}}">{{cnt.link-value}}</a>
+											</span>
+										</div>
+ -->
+										<!-- <div class="contact-item">
+											<span class="contacts-address-name"><i class="fa fa-lg fa-phone-square"></i>&nbsp;
+												<span class="contacts-address-value">+38(098)-795-13-67</span>
+											</span>
+										</div> -->
+
+										<div class="contact-item">
+											<span class="contacts-address-name"><i class="{{faAttribute}} fa-envelope-square"></i>&nbsp;
+													<a href="mailto:zaknafeyn@gmail.com">zaknafeyn@gmail.com</a>
+											</span>
+										</div>
+
+										<div class="contact-item">
+											<span class="contacts-address-name"><i class="{{faAttribute}} fa-hand-o-right"></i>&nbsp;
+												<a href="http://cv.vradchuk.info">cv.vradchuk.info</a>
+											</span>
+										</div>
+
+										<div class="contact-item">
+											<span class="contacts-address-name"><i class="{{faAttribute}} fa-phone-square"></i>&nbsp;
+												<span class="contacts-address-value">+38(098)-795-13-67</span>
+											</span>
+										</div>
+
+										<div class="contact-item">
+											<span class="contacts-address-name"><i class="{{faAttribute}} fa-skype"></i>&nbsp;
+												<a href="skype:NZeraF?call">zzaknafeyn</a>
+											</span>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<div class="contacts-bar">
+								<a href="https://www.linkedin.com/in/valentineradchuk"><i class="fa fa-linkedin-square fa-2x"></i></a>
+								<a href="https://www.xing.com/profile/Valentyn_Radchuk/"><i class="fa fa-xing-square fa-2x"></i></a>
+								<a href="https://www.facebook.com/valik.radchuk"><i class="fa fa-facebook-square fa-2x"></i></a>
+								<a href="https://github.com/Zaknafeyn"><i class="fa fa-github-square fa-2x"></i></a>
+								<a href="https://twitter.com/zzaknafeyn"><i class="fa fa-twitter-square fa-2x"></i></a>
+							</div>
+							<div class="contacts-bar">
+								<a class="download-cv" href="http://zaknafeyn.github.io/cv/pdf/CV_Valentine_Radchuk_CSharp_developer.pdf"><i class="fa fa-download fa-lg"></i>&nbsp;Download CV</a>
+							</div>
+						</div>
+					</div>
+				</header>
+
+				<main>
+					<div class="summary-border">
+						<div>
+							<span class="summary-text">
+								Experienced software developer. Professionally develop software - since 2007 year</br>
+								Have experience in full stack of .NET technologies to build Desktop, Backend and Web applications</br>
+								Have experience managing group of developers</br>
+								Have experience reading trainings for distributed international team</br>
+								Have experience in communication with customer and formalizing requirements</br>
+								Quick-learning and open for innovations
+							</span>
+						</div>
+					</div>
+					
+					<article>
+						<h2>Skills</h2>
+						<!-- Skill Row 1 -->
+						<div class="row-skill">
+							<div class="span-3">
+								<span class="skill-area">Programming languages:</span>
+							</div>
+							<div class="span-3">
+								<div class="skill-item">
+									<span class="skill-name"><i class="icon-csharp fa-lg"></i>&nbsp;C Sharp</span>
+									<div class="level">
+															<span class="l-8"></span>
+									</div>
+								</div>	
+							</div>
+							<div class="span-3">
+								<div class="skill-item">
+									<span class="skill-name">
+										<i class="icon-html fa-lg"></i>&nbsp;HTML,&nbsp;
+										<i class="icon-css fa-lg"></i>&nbsp;CSS,&nbsp;
+										<i class="icon-javascript fa-lg-fix"></i>&nbsp;JS
+									</span>
+									<div class="level">
+															<span class="l-5"></span>
+									</div>
+								</div>	
+							</div>
+							<div class="span-3">
+								<div class="skill-item">
+									<span class="skill-name">
+										<i class="icon-shell fa-lg"></i>&nbsp;PowerShell,&nbsp;Batch
+									</span>
+									<div class="level">
+															<span class="l-4"></span>
+									</div>
+								</div>	
+							</div>
+						</div>
+						<!-- Skill Row 2 -->
+						<div class="row-skill">
+							<div class="span-3">
+								<span class="skill-area">Databases:</span>
+							</div>
+							<div class="span-3">
+								<div class="skill-item">
+									<span class="skill-name"><i class="icon-mssql fa-lg-fix"></i>&nbsp;MS SQL</span>
+									<div class="level">
+														<span class="l-4"></span>
+									</div>
+								</div>	
+							</div>
+							<div class="span-3">
+								<div class="skill-item">
+									<span class="skill-name">
+										<i class="icon-oracle fa-lg-fix"></i>&nbsp;Oracle
+									</span>
+									<div class="level">
+														<span class="l-4"></span>
+									</div>
+								</div>	
+							</div>
+							<div class="span-3">
+								<div class="skill-item">
+									<span class="skill-name">MongoDB</span>
+									<div class="level">
+														<span class="l-1"></span>
+									</div>
+								</div>	
+							</div>
+						</div>
+						
+						<!-- Skill Row 3 -->
+						<div class="row-skill">
+							<div class="span-3">
+								<span class="skill-area">C# Frameworks:</span>
+							</div>
+							<div class="span-3">
+								<div class="skill-item">
+									<span class="skill-name">.NET 2-3.5, LINQ</span>
+									<div class="level">
+															<span class="l-7"></span>
+									</div>
+								</div>	
+							</div>
+							<div class="span-3">
+								<div class="skill-item">
+									<span class="skill-name">ASP.NET MVC, WCF, EF</span>
+									<div class="level">
+															<span class="l-6"></span>
+									</div>
+								</div>	
+							</div>
+							<div class="span-3">
+								<div class="skill-item">
+									<span class="skill-name">log4net, nUnit, moq</span>
+									<div class="level">
+															<span class="l-6"></span>
+									</div>
+								</div>	
+							</div>
+						</div>
+						<!-- Skill Row 4 -->
+						<div class="row-skill">
+							<div class="span-3">
+								<span class="skill-area">Instruments:</span>
+							</div>
+							<div class="span-3">
+								<div class="skill-item">
+									<span class="skill-name">GIT, SVN, Jira, Confluence</span>
+									<div class="level">
+															<span class="l-9"></span>
+									</div>
+								</div>	
+							</div>
+							<div class="span-3">
+								<div class="skill-item">
+									<span class="skill-name">TC, MSBuild, NuGet</span>
+									<div class="level">
+															<span class="l-6"></span>
+									</div>
+								</div>	
+							</div>
+							<div class="span-3">
+								<div class="skill-item">
+									<span class="skill-name">VS, WebStorm, Sublime</span>
+									<div class="level">
+															<span class="l-6"></span>
+									</div>
+								</div>	
+							</div>
+						</div>
+						<!-- Skill Row 5 -->
+						<div class="row-skill">
+							<div class="span-3">
+								<span class="skill-area">Other skills:</span>
+							</div>
+							<div class="span-3">
+								<div class="skill-item">
+									<span class="skill-name">XML/XSLT/XPath</span>
+									<div class="level">
+															<span class="l-6"></span>
+									</div>
+								</div>	
+							</div>
+							<div class="span-3">
+								<div class="skill-item">
+									<span class="skill-name">SCRUM, Kanban</span>
+									<div class="level">
+															<span class="l-8"></span>
+									</div>
+								</div>	
+							</div>
+							<div class="span-3">
+								<div class="skill-item">
+									<span class="skill-name">OOP, OOD, SOLID</span>
+									<div class="level">
+															<span class="l-10"></span>
+									</div>
+								</div>	
+							</div>
+						</div>
+						<!-- Skill Row 6 -->
+						<div class="row-skill">
+							<div class="span-3">
+								<span class="skill-area">Languages:</span>
+							</div>
+							<div class="span-3">
+								<div class="skill-item">
+									<span class="skill-name">
+										<img src="img/UA_lang.jpg" class="language-image">&nbsp;Ukrainian (native)
+									</span>
+									<div class="level">
+															<span class="l-10"></span>
+									</div>
+								</div>	
+							</div>
+							<div class="span-3">
+								<div class="skill-item">
+									<span class="skill-name">
+										<img src="img/GB_lang.jpg" class="language-image">&nbsp;English (advanced)
+									</span>
+									<div class="level">
+															<span class="l-7"></span>
+									</div>
+								</div>	
+							</div>
+							<div class="span-3">
+								<div class="skill-item">
+									<span class="skill-name">
+										<img src="img/DE_lang.jpg" class="language-image">&nbsp;German (basic)
+									</span>
+									<div class="level">
+															<span class="l-1"></span>
+									</div>
+								</div>	
+							</div>
+						</div>
+					</article>
+
+					<article>
+						<h2>Experience</h2>
+						<!-- Experience item -->
+						<div class="row-exp">
+							<div class="span-3">
+								<div class="exp-header">
+									<a href="http://www.cogniance.com/">
+										<img class="exp-logo" src="./img/logos/cogniance.png">
+									</a>
+									<span class="exp-position">Senior .NET developer</span>
+									<span class="exp-area">Cogniance</span>
+								</div>
+								<div>
+									<span class="exp-place">Kyiv, Ukraine<br/>10.2014 - now</span>
+								</div>
+							</div>
+							<div class="span-9">
+								<div class="exp-item">
+									<span class="exp-descr">Development and supporting Outlook plugin.</span>
+								</div>
+								<div class="exp-technologies">
+									
+								</div>
+							</div>
+						</div>
+						<!-- Experience item -->
+						<div class="row-exp">
+							<div class="span-3">
+								<div class="exp-header">
+									<a href="http://www.luxoft.com/">
+										<img class="exp-logo" src="./img/logos/Luxoft.jpg">
+									</a>
+									<span class="exp-position">.NET Technical Lead</span>
+									<span class="exp-area">UBS ODC at Luxoft Ukraine</span>
+								</div>
+								<div>
+									<span class="exp-place">Kyiv, Ukraine<br/>01.2012 - 07.2014</span>
+								</div>
+							</div>
+							<div class="span-9">
+								<div class="exp-item">
+									<span class="exp-descr">Optimization risk calculation engine for derivative financial instruments.</span>
+								</div>
+								<div class="exp-technologies">
+									
+								</div>
+							</div>
+						</div>
+						<!-- Experience item -->
+						<div class="row-exp">
+							<div class="span-3">
+								<div class="exp-header">
+									<a href="http://www.luxoft.com/">
+										<img class="exp-logo" src="./img/logos/Luxoft.jpg">
+									</a>
+									<span class="exp-position">Senior .NET developer</span>
+									<span class="exp-area">UBS ODC at Luxoft Ukraine</span>
+								</div>
+								<div>
+									<span class="exp-place">Kyiv, Ukraine<br/>05.2010 - 12.2011</span>
+								</div>
+							</div>
+							<div class="span-9">
+								<div class="exp-item">
+									<span class="exp-descr">Optimization risk calculation engine for derivative financial instruments.</span>
+								</div>
+								<div class="exp-technologies">
+									
+								</div>
+							</div>
+						</div>
+						<!-- Experience item -->
+						<div class="row-exp">
+							<div class="span-3">
+								<div class="exp-header">
+									<a href="http://www.globallogic.com/">
+										<img class="exp-logo" src="./img/logos/gl.jpg">
+									</a>
+									<span class="exp-position">.NET developer</span>
+									<span class="exp-area">GlobalLogic Ukraine</span>
+								</div>
+								<div>
+									<span class="exp-place">Kyiv, Ukraine<br/>12.2009 - 04.2010</span>
+								</div>
+							</div>
+							<div class="span-9">
+								<div class="exp-item">
+									<span class="exp-descr">Optimizing billing system for company <a href="">Voltari (Motricity)</a></span>
+								</div>
+								<div class="exp-technologies">
+									
+								</div>
+							</div>
+						</div>
+						<!-- Experience item -->
+						<div class="row-exp">
+							<div class="span-3">
+								<div class="exp-header">
+									<a href="http://www1.vimas.com/">
+										<img class="exp-logo" src="./img/logos/vimas_1.png">
+									</a>
+									<span class="exp-position">.NET developer</span>
+									<span class="exp-area">Vimas technologies</span>
+								</div>
+								<div>
+									<span class="exp-place">Kyiv, Ukraine<br/>07.2007 - 11.2009</span>
+								</div>
+							</div>
+							<div class="span-9">
+								<div class="exp-item">
+									<span class="exp-descr">Development component for filling content for product configurator for one of the departments of company <a href="http://www.spx.com/"> SPX</a></span>
+								</div>
+								<div class="exp-technologies">
+									
+								</div>
+							</div>
+						</div>
+
+					</article>
+					<!-- edu -->
+					<article>
+						<h2>Education</h2>
+						<div class="row-edu">
+							<div class="span-3">
+								<div>
+									<span class="edu-area">NTUU «KPI»</br>
+										«Applied Mathemathics Faculty»
+									</span>
+								</div>
+								<div>
+									<span class="edu-place">Kyiv, Ukraine<br/>2001 - 2008</span>
+								</div>
+							</div>
+							<div class="span-9">
+								<div class="edu-item">
+									<span class="edu-descr">Speciality: «Specialized computer systems» - Magister<br/> Diploma with honour</span>
+								</div>	
+							</div>
+						</div>
+					</article>
+					
+					<article>
+						<h2>Hobbies</h2>
+						<!-- Carousel -->
+						<div class="carousel">
+							<div class="carousel-item">
+								<img class="carousel-img" src="./img/hobbies/trips.jpg"/>
+								<span class="carousel-text">Tourism and trips</span class="carousel-text">
+							</div>
+							<div class="carousel-item">
+								<img class="carousel-img" src="./img/hobbies/ultimate_1.jpg"/>
+								<span class="carousel-text">Ultimate frisbee</span>
+							</div>
+							<div class="carousel-item">
+								<img class="carousel-img" src="./img/hobbies/skiing_1.jpg"/>
+								<span class="carousel-text">Skiing</span>
+							</div>
+						</div>
+					</article>
+				</main>
+
+				<footer>
+				</footer>
+				
+			</section>
+		</div>
+		
+		<!-- script section -->
+
+		<!-- libs -->
+		<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.3.15/slick.min.js"></script>
+
+		<script src="./bower_components/angular/angular.js"></script>
+		<script src="bower_components/angular-route/angular-route.js"></script>
+		<!--script src="view1/view1.js"></script>
+		<script src="view2/view2.js"></script>
+		<script src="components/version/version.js"></script>
+		<script src="components/version/version-directive.js"></script>
+		<script src="components/version/interpolate-filter.js"></script-->
+
+		<!-- Custom scripts -->
+		<script type="text/javascript" src="./app.js"></script>
+
+	</body>
+	
+	
+
+<!-- <script type="text/rocketscript" data-rocketsrc="_layout/js/jquery-1.9.1.min.js"></script>
+<script type="text/rocketscript" data-rocketsrc="_layout/js/imagebox/jquery.imagebox.min.js"></script>
+<script type="text/rocketscript" data-rocketsrc="_layout/js/flexslider/jquery.flexslider.min.js"></script>
+<script type="text/rocketscript" data-rocketsrc="_layout/js/plugins.js"></script>
+<script type="text/rocketscript" data-rocketsrc="_layout/js/validity/jquery.validity.js"></script>
+<script type="text/rocketscript" data-rocketsrc="_layout/js/scripts.js"></script>
+<script type="text/rocketscript" data-rocketsrc="_layout/js/tel.js"></script> -->
+
 </html>

@@ -1,0 +1,46 @@
+$primary-background-color: #cccccc;
+$content-background-color: #fff;
+
+$headers-color: #23567D;
+$color1: #3177AD;
+$color2: #398AC9;
+$color3: #275F8A;
+$color4: #1C4463;
+$color5: #174261;
+
+// complementary colors
+$color6: #C98011;
+
+// grey colors
+$gray-color-1: #444;
+$gray-color-2: #D9D9D9;
+$gray-color-3: #f5f5f5;
+
+$palette-width: 800px;
+$row-width: 720px;
+
+/* grid variables */
+$grid-item-width: $row-width / 12;
+
+/* links */
+$default-hover-color: $color2;
+$default-link-color: $color1;
+/* links */
+
+/* fonts */
+$font-arial: 'Arial', sans-serif;
+$font-exo-2: 'Exo 2', sans-serif;
+$font-maven-pro: 'Maven Pro', sans-serif;
+$font-open-sans: "Open Sans", Arial, sans-serif;
+/* fonts */
+
+/* 
+font shorthands:
+font: font-style font-variant font-weight font-size/line-height font-family;
+ */
+$font-contacts: normal normal normal 12px/100% $font-arial;
+$font-download-cv-link: normal normal normal 14px/100% $font-arial;
+$font-summary-text: normal normal 300 16px/200% $font-open-sans;
+$font-title: normal normal normal 14px/100% $font-maven-pro;
+$font-name-header: normal normal normal 26px/100% $font-exo-2;
+$font-edu-descr-text: normal normal normal 16px/100% $font-maven-pro;
