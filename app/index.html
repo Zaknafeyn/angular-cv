@@ -92,22 +92,6 @@
 								</div>
 								<div class="span-3">
 									<div class="contacts">
-
-										<!-- <div class="contact-item" ng-repeat="cnt in contactsList">
-
-											<span class="contacts-address-name">
-											<i class="fa fa-lg {{cnt.fa-glyph}}"></i>&nbsp;
-
-													<a href="{{cnt.link-value}}">{{cnt.link-value}}</a>
-											</span>
-										</div>
- -->
-										<!-- <div class="contact-item">
-											<span class="contacts-address-name"><i class="fa fa-lg fa-phone-square"></i>&nbsp;
-												<span class="contacts-address-value">+38(098)-795-13-67</span>
-											</span>
-										</div> -->
-
 										<div class="contact-item">
 											<span class="contacts-address-name"><i class="{{faAttribute}} fa-envelope-square"></i>&nbsp;
 													<a href="mailto:zaknafeyn@gmail.com">zaknafeyn@gmail.com</a>
@@ -119,13 +103,6 @@
 												<a href="http://cv.vradchuk.info">cv.vradchuk.info</a>
 											</span>
 										</div>
-
-										<div class="contact-item">
-											<span class="contacts-address-name"><i class="{{faAttribute}} fa-phone-square"></i>&nbsp;
-												<span class="contacts-address-value">+38(098)-795-13-67</span>
-											</span>
-										</div>
-
 										<div class="contact-item">
 											<span class="contacts-address-name"><i class="{{faAttribute}} fa-skype"></i>&nbsp;
 												<a href="skype:NZeraF?call">zzaknafeyn</a>
@@ -136,11 +113,9 @@
 								</div>
 							</div>
 							<div class="contacts-bar">
-								<a href="https://www.linkedin.com/in/valentineradchuk"><i class="fa fa-linkedin-square fa-2x"></i></a>
-								<a href="https://www.xing.com/profile/Valentyn_Radchuk/"><i class="fa fa-xing-square fa-2x"></i></a>
-								<a href="https://www.facebook.com/valik.radchuk"><i class="fa fa-facebook-square fa-2x"></i></a>
-								<a href="https://github.com/Zaknafeyn"><i class="fa fa-github-square fa-2x"></i></a>
-								<a href="https://twitter.com/zzaknafeyn"><i class="fa fa-twitter-square fa-2x"></i></a>
+								<span ng-repeat="lnk in links">
+								<a href="{{lnk.link}}"><i class="fa {{lnk.icon}} fa-2x"></i></a>
+								</span>
 							</div>
 							<div class="contacts-bar">
 								<a class="download-cv" href="http://zaknafeyn.github.io/cv/pdf/CV_Valentine_Radchuk_CSharp_developer.pdf"><i class="fa fa-download fa-lg"></i>&nbsp;Download CV</a>
@@ -163,163 +138,21 @@
 						</div>
 					</div>
 					
-					<article>
+					<article ng-controller="SkillSet">
 						<h2>Skills</h2>
-						<!-- Skill Row 1 -->
-						<div class="row-skill">
+						<div class="row-skill" ng-repeat="skillSet in skillSets">
 							<div class="span-3">
-								<span class="skill-area">Programming languages:</span>
+								<span class="skill-area">{{skillSet.name}}:</span>
 							</div>
-							<div class="span-3">
-								<div class="skill-item">
-									<span class="skill-name"><i class="icon-csharp fa-lg"></i>&nbsp;C Sharp</span>
-									<div class="level">
-															<span class="l-8"></span>
-									</div>
-								</div>	
-							</div>
-							<div class="span-3">
+							<div class="span-3" ng-repeat="skillItem in skillSet.skillItems">
 								<div class="skill-item">
 									<span class="skill-name">
-										<i class="icon-html fa-lg"></i>&nbsp;HTML,&nbsp;
-										<i class="icon-css fa-lg"></i>&nbsp;CSS,&nbsp;
-										<i class="icon-javascript fa-lg-fix"></i>&nbsp;JS
+										<span ng-repeat="skill in skillItem.skills">
+											<i class="{{skill.iconClass}} fa-lg"></i>&nbsp;<span title="{{skill.title}}">{{skill.name}}{{skill.separator}}</span>
+										</span>
 									</span>
 									<div class="level">
-															<span class="l-5"></span>
-									</div>
-								</div>	
-							</div>
-							<div class="span-3">
-								<div class="skill-item">
-									<span class="skill-name">
-										<i class="icon-shell fa-lg"></i>&nbsp;PowerShell,&nbsp;Batch
-									</span>
-									<div class="level">
-															<span class="l-4"></span>
-									</div>
-								</div>	
-							</div>
-						</div>
-						<!-- Skill Row 2 -->
-						<div class="row-skill">
-							<div class="span-3">
-								<span class="skill-area">Databases:</span>
-							</div>
-							<div class="span-3">
-								<div class="skill-item">
-									<span class="skill-name"><i class="icon-mssql fa-lg-fix"></i>&nbsp;MS SQL</span>
-									<div class="level">
-														<span class="l-4"></span>
-									</div>
-								</div>	
-							</div>
-							<div class="span-3">
-								<div class="skill-item">
-									<span class="skill-name">
-										<i class="icon-oracle fa-lg-fix"></i>&nbsp;Oracle
-									</span>
-									<div class="level">
-														<span class="l-4"></span>
-									</div>
-								</div>	
-							</div>
-							<div class="span-3">
-								<div class="skill-item">
-									<span class="skill-name">MongoDB</span>
-									<div class="level">
-														<span class="l-1"></span>
-									</div>
-								</div>	
-							</div>
-						</div>
-						
-						<!-- Skill Row 3 -->
-						<div class="row-skill">
-							<div class="span-3">
-								<span class="skill-area">C# Frameworks:</span>
-							</div>
-							<div class="span-3">
-								<div class="skill-item">
-									<span class="skill-name">.NET 2-3.5, LINQ</span>
-									<div class="level">
-															<span class="l-7"></span>
-									</div>
-								</div>	
-							</div>
-							<div class="span-3">
-								<div class="skill-item">
-									<span class="skill-name">ASP.NET MVC, WCF, EF</span>
-									<div class="level">
-															<span class="l-6"></span>
-									</div>
-								</div>	
-							</div>
-							<div class="span-3">
-								<div class="skill-item">
-									<span class="skill-name">log4net, nUnit, moq</span>
-									<div class="level">
-															<span class="l-6"></span>
-									</div>
-								</div>	
-							</div>
-						</div>
-						<!-- Skill Row 4 -->
-						<div class="row-skill">
-							<div class="span-3">
-								<span class="skill-area">Instruments:</span>
-							</div>
-							<div class="span-3">
-								<div class="skill-item">
-									<span class="skill-name">GIT, SVN, Jira, Confluence</span>
-									<div class="level">
-															<span class="l-9"></span>
-									</div>
-								</div>	
-							</div>
-							<div class="span-3">
-								<div class="skill-item">
-									<span class="skill-name">TC, MSBuild, NuGet</span>
-									<div class="level">
-															<span class="l-6"></span>
-									</div>
-								</div>	
-							</div>
-							<div class="span-3">
-								<div class="skill-item">
-									<span class="skill-name">VS, WebStorm, Sublime</span>
-									<div class="level">
-															<span class="l-6"></span>
-									</div>
-								</div>	
-							</div>
-						</div>
-						<!-- Skill Row 5 -->
-						<div class="row-skill">
-							<div class="span-3">
-								<span class="skill-area">Other skills:</span>
-							</div>
-							<div class="span-3">
-								<div class="skill-item">
-									<span class="skill-name">XML/XSLT/XPath</span>
-									<div class="level">
-															<span class="l-6"></span>
-									</div>
-								</div>	
-							</div>
-							<div class="span-3">
-								<div class="skill-item">
-									<span class="skill-name">SCRUM, Kanban</span>
-									<div class="level">
-															<span class="l-8"></span>
-									</div>
-								</div>	
-							</div>
-							<div class="span-3">
-								<div class="skill-item">
-									<span class="skill-name">OOP, OOD, SOLID</span>
-									<div class="level">
-															<span class="l-10"></span>
+										<span title="{{skillItem.level}} / 10" class="l-{{skillItem.level}}"></span>
 									</div>
 								</div>	
 							</div>
