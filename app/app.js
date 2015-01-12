@@ -15,17 +15,6 @@ $(document).ready(function(){
 
 var myApp = angular.module('myApp', []);
 
-// myApp.controller('SkillSet', function($scope) {
-// 	$scope.skills = [
-// 		{'name': 'Nexus S',
-// 		 'level': 1},
-// 		{'name': 'Some skill',
-// 		 'level': 2},
-// 		{'name': 'MOTOROLA XOOM™',
-// 		 'level': 3}
-// 	];
-// });
-
 myApp.controller('HeaderContent', function($scope) {
 
 	$scope.titleName = "Valentyne Radchuk";
@@ -201,12 +190,98 @@ myApp.controller('SkillSet', function($scope) {
 	];
 });
 
-// angular.module('myApp', [
-//   'ngRoute',
-//   'myApp.view1',
-//   'myApp.view2',
-//   'myApp.version'
-// ]).
-// config(['$routeProvider', function($routeProvider) {
-//   $routeProvider.otherwise({redirectTo: '/view1'});
-// }]);
+myApp.controller('ExperienceSet', function($scope) {
+
+	$scope.expItems = [
+		{ 
+			itemid: 0, 
+			companyName: "Cogniance",
+			companyLink: "http://www.cogniance.com/",
+			position: "Senior .NET Developer",
+			logoSrc: "./img/logos/cogniance.png",
+			place: "Kyiv, Ukraine",
+			expStart: "10.2014",
+			expEnd: "now",
+			projects: [
+				{
+					projectName: "eFolder", 
+					projectLink: "http://www.efolder.net/", 
+					projectDescr:"Development and supporting Outlook plugin."
+				}
+			]
+		},
+
+		{ 
+			itemid: 1, 
+			companyName: "UBS ODC at Luxoft Ukraine",
+			companyLink: "http://www.luxoft.com/",
+			position: ".NET Technical Lead",
+			logoSrc: "./img/logos/Luxoft.jpg",
+			place: "Kyiv, Ukraine",
+			expStart: "01.2012",
+			expEnd: "07.2014",
+			projects: [
+				{
+					projectName: "Structured Risk", 
+					projectLink: "http://usb.com", 
+					projectDescr:"Optimization risk calculation engine for derivative financial instruments."
+				}
+			]
+		},
+
+		{ 
+			itemid: 2, 
+			companyName: "UBS ODC at Luxoft Ukraine",
+			companyLink: "http://www.luxoft.com/",
+			position: "Senior .NET developer",
+			logoSrc: "./img/logos/Luxoft.jpg",
+			place: "Kyiv, Ukraine",
+			expStart: "05.2010",
+			expEnd: "12.2011",
+			projects: [
+				{
+					projectName: "Structured Risk", 
+					projectLink: "http://usb.com", 
+					projectDescr:"Optimization risk calculation engine for derivative financial instruments."
+				}
+			]
+		},
+
+		{ 
+			itemid: 3, 
+			companyName: "GlobalLogic",
+			companyLink: "http://www.globallogic.com/",
+			position: ".NET developer",
+			logoSrc: "./img/logos/gl.jpg",
+			place: "Kyiv, Ukraine",
+			expStart: "12.2009",
+			expEnd: "04.2010",
+			projects: [
+				{
+					projectName: "Voltari (Motricity)", 
+					projectLink: "http://voltari.com", 
+					projectDescr:"Optimizing billing system for company Voltari (Motricity)"
+				}
+			]
+		},
+
+		{ 
+			itemid: 4, 
+			companyName: "Vimas Technologies",
+			companyLink: "http://www1.vimas.com/",
+			position: ".NET developer",
+			logoSrc: "./img/logos/vimas_1.png",
+			place: "Kyiv, Ukraine",
+			expStart: "07.2007",
+			expEnd: "11.2009",
+			projects: [
+				{
+					projectName: "Voltari (Motricity)", 
+					projectLink: "http://www.spx.com/", 
+					projectDescr:"Development component for filling content for product configurator for one of the departments of company SPX"
+				}
+			]
+		},
+	];
+
+});
