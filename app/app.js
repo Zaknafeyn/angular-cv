@@ -192,9 +192,11 @@ myApp.controller('SkillSet', function($scope) {
 
 myApp.controller('ExperienceSet', function($scope) {
 
+	$scope.predicate = 'predicate';
+	
 	$scope.expItems = [
 		{ 
-			itemid: 0, 
+			itemid: 4, 
 			companyName: "Cogniance",
 			companyLink: "http://www.cogniance.com/",
 			position: "Senior .NET Developer",
@@ -212,7 +214,7 @@ myApp.controller('ExperienceSet', function($scope) {
 		},
 
 		{ 
-			itemid: 1, 
+			itemid: 3, 
 			companyName: "UBS ODC at Luxoft Ukraine",
 			companyLink: "http://www.luxoft.com/",
 			position: ".NET Technical Lead",
@@ -248,7 +250,7 @@ myApp.controller('ExperienceSet', function($scope) {
 		},
 
 		{ 
-			itemid: 3, 
+			itemid: 1, 
 			companyName: "GlobalLogic",
 			companyLink: "http://www.globallogic.com/",
 			position: ".NET developer",
@@ -266,7 +268,7 @@ myApp.controller('ExperienceSet', function($scope) {
 		},
 
 		{ 
-			itemid: 4, 
+			itemid: 0, 
 			companyName: "Vimas Technologies",
 			companyLink: "http://www1.vimas.com/",
 			position: ".NET developer",
