@@ -98,7 +98,7 @@ myApp.controller('SkillSet', function($scope) {
 			{
 				level : 4,
 				skills: [
-					{name: "HTML", iconClass: "icon-oracle fa-lg-fix"}
+					{name: "Oracle", iconClass: "icon-oracle fa-lg-fix"}
 				]
 			},
 			{
@@ -129,7 +129,9 @@ myApp.controller('SkillSet', function($scope) {
 			{
 				level: 6,
 				skills: [
-					{name : "MongoDB"},
+					{name : "log4net", separator:","},
+					{name : "nUnit", separator:","},
+					{name : "moq"}
 				]
 			}
 		]},	
