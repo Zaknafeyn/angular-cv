@@ -192,17 +192,23 @@ myApp.controller('SkillSet', function($scope) {
 	];
 });
 
-myApp.controller('ExperienceSet', function($scope) {
+myApp.controller('ExperienceSet', function($scope, $http) {
+
+	// $http.get('./models/expItems.json').success(function(data) {
+ //    $scope.expItems = data;
+ //    console.log("Got data:");
+ //    console.log(data);
+ //  });
 
 	$scope.predicate = 'predicate';
-	
+
 	$scope.expItems = [
 		{ 
 			itemid: 4, 
 			companyName: "Cogniance",
 			companyLink: "http://www.cogniance.com/",
 			position: "Senior .NET Developer",
-			logoSrc: "./img/logos/cogniance.png",
+			logoSrc: "cogniance.png",
 			place: "Kyiv, Ukraine",
 			expStart: "10.2014",
 			expEnd: "now",
@@ -220,7 +226,7 @@ myApp.controller('ExperienceSet', function($scope) {
 			companyName: "UBS ODC at Luxoft Ukraine",
 			companyLink: "http://www.luxoft.com/",
 			position: ".NET Technical Lead",
-			logoSrc: "./img/logos/Luxoft.jpg",
+			logoSrc: "Luxoft.jpg",
 			place: "Kyiv, Ukraine",
 			expStart: "01.2012",
 			expEnd: "07.2014",
@@ -238,7 +244,7 @@ myApp.controller('ExperienceSet', function($scope) {
 			companyName: "UBS ODC at Luxoft Ukraine",
 			companyLink: "http://www.luxoft.com/",
 			position: "Senior .NET developer",
-			logoSrc: "./img/logos/Luxoft.jpg",
+			logoSrc: "Luxoft.jpg",
 			place: "Kyiv, Ukraine",
 			expStart: "05.2010",
 			expEnd: "12.2011",
@@ -256,7 +262,7 @@ myApp.controller('ExperienceSet', function($scope) {
 			companyName: "GlobalLogic",
 			companyLink: "http://www.globallogic.com/",
 			position: ".NET developer",
-			logoSrc: "./img/logos/gl.jpg",
+			logoSrc: "gl.jpg",
 			place: "Kyiv, Ukraine",
 			expStart: "12.2009",
 			expEnd: "04.2010",
@@ -274,7 +280,7 @@ myApp.controller('ExperienceSet', function($scope) {
 			companyName: "Vimas Technologies",
 			companyLink: "http://www1.vimas.com/",
 			position: ".NET developer",
-			logoSrc: "./img/logos/vimas_1.png",
+			logoSrc: "vimas_1.png",
 			place: "Kyiv, Ukraine",
 			expStart: "07.2007",
 			expEnd: "11.2009",
