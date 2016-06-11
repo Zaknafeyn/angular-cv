@@ -327,5 +327,15 @@ myApp.controller('ExperienceSet', function($scope, $http) {
 			]
 		},
 	];
+	
+	$scope.otherExperience = [
+		{ 
+			//courses
+			
+			// conferences
+			
+			// public speachess
+		}
+	];
 
 });
