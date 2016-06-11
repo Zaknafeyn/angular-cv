@@ -114,24 +114,48 @@ myApp.controller('SkillSet', function($scope) {
 			{
 				level: 7,
 				skills : [
-					{name : ".NET 2-3.5", separator:","},
-					{name : "LINQ"},
+					{name : ".NET 2-4.6"},
+				]
+			},
+			{
+				level : 8,
+				skills: [
+					{name: "DI containers (Unity)", title: "Dependency Injection containers (Unity, AutoFac)"},
+//					{name: "WCF", separator:",", title: "Windows Communcation Foundation"},
+//					{name: "EF", title: "Entity Framework"},
+				]
+			},
+			{
+				level: 8,
+				skills: [
+					{name : "log4net", title: "Apache Log4Net - logging library", separator:","},
+					{name : "nUnit", title: ".NET version of popular testing framework", separator:","},
+					{name : "moq", title: "moq - mocking framework"}
+				]
+			}
+		]},	
+
+		{name: "C# Frameworks", 
+		 skillItems: [
+			{
+				level: 5,
+				skills : [
+					{name: "ASP MVC", separator:",", title: "Active Server Pages .NET MVC"},
+					{name: "EF", title: "Entity Framework"},
 				]
 			},
 			{
 				level : 6,
 				skills: [
-					{name: "ASP.NET MVC", separator:","},
-					{name: "WCF", separator:",", title: "Windows Communcation Foundation"},
-					{name: "EF", title: "Entity Framework"},
+					{name: "WPF", title: "Windows Presentation Foundation", separator:","},
+					{name: "XAML", title: "eXtensible Application Markup Language"},
 				]
 			},
 			{
 				level: 6,
 				skills: [
-					{name : "log4net", separator:","},
-					{name : "nUnit", separator:","},
-					{name : "moq"}
+					{name : "Windows Phone", separator:","},
+					{name : "UWP", title: "Universal Windows Platform"}
 				]
 			}
 		]},	
@@ -216,8 +240,18 @@ myApp.controller('ExperienceSet', function($scope, $http) {
 				{
 					projectName: "eFolder", 
 					projectLink: "http://www.efolder.net/", 
-					projectDescr:"Development and supporting Outlook plugin."
-				}
+					projectDescr: "Development and supporting an Outlook plugin."
+				},
+				{
+					projectName: "Insteon", 
+					projectLink: "http://www.insteon.com/", 
+					projectDescr: "Supporting Windows 8.1 application. Setup CI, consulting onsite developers. "
+				},
+				{
+					projectName: "PitneyBowes", 
+					projectLink: "http://www.pitneybowes.com/", 
+					projectDescr: "Development of an application for Windows 10 UWP."
+				},
 			]
 		},
 

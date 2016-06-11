@@ -17,6 +17,11 @@
 	background-color: rgba(255,255,255,0);
 }
 
+.project-descr-item {
+	@extend .exp-descr;
+	margin: 0px 0px 10px 0px;
+}
+
 .exp-descr, .exp-descr > a {
 	font: $font-edu-descr-text;
 	color: $gray-color-1;

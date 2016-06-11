@@ -129,10 +129,12 @@
 						<div>
 							<span class="summary-text">
 								Experienced software developer. Professionally develop software - since 2007 year</br>
-								Have experience in full stack of .NET technologies to build Desktop, Backend and Web applications</br>
-								Have experience managing group of developers</br>
+								Experience with full stack of .NET technologies to build Desktop, Backend and Web applications</br>
+								Experience in managing group of developers</br>
 								Have experience reading trainings for distributed international team</br>
-								Have experience in communication with customer and formalizing requirements</br>
+								Organized and conduct C# courses for beginners</br>
+								Experience in communication with customer and formalizing requirements</br>
+								Take part in presales</br>
 								Quick-learning and open for innovations
 							</span>
 						</div>
@@ -214,7 +216,13 @@
 							<div class="span-9">
 								<div class="exp-item">
 								<!-- add project name and link to project -->
-									<span class="exp-descr" ng-repeat="project in expItem.projects">{{project.projectDescr}}</span>
+									<ul>
+										<li class="project-descr-item" ng-repeat="project in expItem.projects">
+<!--											<li>-->
+												<span class="exp-descr"><a href="{{project.projectLink}}">{{project.projectName}}</a> - </span>{{project.projectDescr}}
+<!--											</li>-->
+										</li>
+									</ul>
 								</div>
 								<div class="exp-technologies">
 								</div>
